@@ -5,10 +5,15 @@ import Form from "react-bootstrap/Form"
 
 const AddModal = (props) => {
 
-const {show,onHide,name} = props;
+const {show,onHide,name,appointment,setAppointment} = props;
 
-const submitData = () =>{
-  return "";
+const submitData = (event) =>{
+  event.preventDefault();
+  console.log(appointment);
+  const appointmentObj={id:new Date(),patient:event.target.elements.patientname.value,day:event.target.elements.date.value,consulted:false,doctor:name};
+  appointment.push(appointmentObj);
+  setAppointment(appointment)
+  console.log(appointment);
 }
   return (
     <Modal
@@ -25,18 +30,18 @@ const submitData = () =>{
       </Modal.Title>
     </Modal.Header>
     <Modal.Body>
-    <Form>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form onSubmit={submitData}>
+    <Form.Group className="mb-3" controlId="formBasic" >
       <Form.Label>Patient Name</Form.Label>
-      <Form.Control type="email" placeholder="Enter your name" id="name-id"/>
+      <Form.Control type="text" placeholder="Enter your name" name="patientname"/>
     </Form.Group>
 
-    <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Group className="mb-3" controlId="formBasicPassword" >
       <Form.Label>Day&Time</Form.Label>
-      <Form.Control type="datetime-local"  id="date-id"/>
+      <Form.Control type="datetime-local" name="date"/>
     </Form.Group>
     <div className='d-flex justify-content-center gap-2'>
-    <Button variant="primary" type="submit" onClick={submitData}>
+    <Button variant="primary" type="submit" >
     Submit
   </Button>
   <Button variant="danger" onClick={props.onHide} >

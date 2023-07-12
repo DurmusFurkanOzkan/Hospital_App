@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body{
+    height: 100vh;
+}
 .doctors-title{
     color: #A612BD;
 }
@@ -24,4 +27,41 @@
     transform: scale(1.05);
     outline: 3px solid red;
     
+}
+
+.appo-list{
+    background: linear-gradient(to right, #F5F7FA 0%, #E9EEF4 25%,#DEE4EF 50%,#CFD8E8 75%,#C6D1E3 100%) right;
+    border-radius: 10px;
+    padding: 10px;
+    height: 10vh;
+    cursor: pointer;
+    position: relative;
+}
+
+.appo-id{
+
+}
+
+.consulted-class{
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    background-color: #A612BD;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hr{
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #A612BD;
+    position: absolute;
+    color: #A612BD;
+    margin: 0 100px 0 0;
+
+
 }

@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.doctors-title{
+    color: #A612BD;
+}
+
+.doctor-image{
+    width: 185px;
+    height: 125px;
+    margin: auto;
+    display: block;
+    outline: 1px solid rgba(0, 0, 0,0.1);
+    border-radius: 2px;
+    outline-offset: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.doctor-image:hover{
+    transform: scale(1.05);
+    outline: 3px solid red;
+    
+}
